@@ -1,30 +1,13 @@
 package edu.polytech.springbootdemo.student;
 
-
-import org.springframework.stereotype.Service;
-
-import java.time.LocalDate;
 import java.util.List;
 
-@Service
-public class StudentService {
-    public List<StudentModel> findAllStudents() {
-    return List.of(
-            new StudentModel(
-                    "Donia",
-                            "Chaouch",
-                    LocalDate.now(),
-                    "dchaouch01@gmail.com",
-                            29
 
-                            ),
-                            new StudentModel(
-                "Zayn",
-                        "Slimene",
-                LocalDate.now(),
-                "dchaouch01@gmail.com",
-                        1
-                        )
-                        );
-}
+public interface StudentService {
+
+    StudentController save( StudentController studentController);
+    List<StudentController> findAllStudents();
+    StudentController findByEmail(String email);
+    StudentController update(StudentController studentController);
+    void delete (String email);
 }
